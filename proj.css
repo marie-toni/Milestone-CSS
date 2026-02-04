@@ -1,0 +1,407 @@
+/* Reset CSS by Amaka Ndukwu */
+
+/* making use of :where to allow for low specificity making it easy to override */
+
+
+/* 1. border-box for box model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. remove default margin 
+padding is optional but i do this because of lists*/
+
+:where(:not(dialog)) {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. great for in-page linking */
+@media(prefers-reduced-motion:no-preference) {
+    :where(html) {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 4. line height and text rendering improvement */
+:where(html) {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. ensure full viewport height */
+:where(html, body) {
+    min-block-size: 100%;
+}
+
+/* 6. improve line wrapping */
+:where(h1, h2, h3,
+    h4, h5, h6) {
+    text-wrap: balance;
+}
+
+:where(p) {
+    text-wrap: pretty;
+}
+
+:where(figure)>:where(figcaption) {
+    text-wrap: balance;
+}
+
+:where(p, h1, h2, h3,
+    h4, h5, h6) {
+    overflow-wrap: break-word;
+}
+
+/* 7. making media elements block-level */
+:where(
+    svg,
+    canvas,
+    picture,
+    audio,
+    iframe,
+    embed,
+    object) {
+    display: block
+}
+
+:where(img, svg, video, canvas, picture) {
+    block-size: auto;
+    max-inline-size: 100%
+}
+
+/* 8. inherit font and letter spacing for form controls */
+:where(input,
+    button,
+    textarea,
+    select),
+:where(input[type=file])::-webkit-file-upload-button {
+    font: inherit;
+    letter-spacing: inherit
+}
+
+/* 9. textarea can only resized vertically and will grow to adjust its content */
+:where(textarea) {
+    resize: vertical;
+   field-sizing: content;
+}
+
+/* 10. table */
+:where(table) {
+    width: fit-content;
+    border-collapse: collapse;
+}
+
+:where(pre) {
+    direction: ltr;
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+    writing-mode: lr
+}
+
+:where(a[href],
+    area,
+    button,
+    input:not([type=text],
+        [type=email],
+        [type=number],
+        [type=password],
+        [type=""],
+        [type=tel],
+        [type=url]),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*="-"],
+        pre)) {
+    cursor: pointer
+}
+
+/*  this will disable additional non-standard gestures such as double-tap to zoom*/
+:where(a[href],
+    area,
+    button,
+    input,
+    label[for],
+    select,
+    summary,
+    textarea,
+    [tabindex]:not([tabindex*="-"])) {
+    touch-action: manipulation 
+}
+
+/* My css code starts here*/ 
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+
+
+body{
+    line-height: 110%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+header img{
+    width: 60px;
+    height: 55px;
+}
+
+h2{
+    color:rgb(63, 63, 192);
+    text-align:;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+   
+
+#pic{
+    position: relative;
+    z-index: 2;         
+    background-color :rgba(32, 32, 150, 0.945);
+    height: 6%;
+    position: fixed;
+    width:100% ;
+    padding-left:10px ;
+}
+    
+.page0{
+    position: relative;
+    height: 50vh;
+
+}
+
+.page1{ 
+    width:100%;
+    height: 70vh;
+    overflow:hidden;
+    position: absolute;
+
+}
+
+.page1 header {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     z-index: 2;
+        
+}
+
+.page1 video{
+    position: absolute;
+    inset:0;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    z-index: 0;
+    transform:scaleX(-1);
+    overflow: hidden;
+    background-size: cover;
+       
+ }
+.page1 .logo{
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 50%;
+    padding: 1rem;
+    padding-top: rem;
+}
+    
+.logo {
+     top: 100px;
+     left: 30px;
+}
+
+.page1 h1 {
+    margin:3% ;
+}
+
+button{
+    height: 35px;
+    border-radius: 10px; 
+    width: 150px;
+}
+
+#but1{
+    height: 35px;
+    border-radius: 10px;
+    background-color: blue;
+        
+}
+    
+.page2 {
+    text-align: center; 
+}
+
+    .page2 video {
+        width: 600px;
+    }
+
+    .box{
+        color: rgb(77, 77, 236);
+        font-weight: 200;
+    }
+
+    .page3 {
+        text-align: center;
+        background-color: rgba(226, 232, 250, 0.651);
+        padding-top: 20px;
+    }
+   
+
+    .images{
+       gap: 15px;
+       display: flexbox;
+       justify-content: center;
+       align-items: center;
+    }
+
+    .images img{
+        width: 250px;
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    
+    .page4{
+        align-items: center;
+        text-align: center;
+
+    }
+
+    table{
+        table-layout: fixed;
+        display: inline-table;
+        align-items: center;
+        width: 80%;
+        border-collapse: collapse;
+        border-radius: 30px;
+        overflow: hidden;   
+    }
+
+
+    thead {
+        background-color: rgb(90, 90, 221);
+        color: rgb(255, 243, 243);
+        gap: 30px;
+    }
+
+
+    th,td{
+        border:1px solid #ffffff;
+        border-collapse: collapse;
+        padding: 10px
+    }
+
+     
+    tbody{
+        text-align: center;
+        background-color: rgb(234, 234, 252);
+        border:1px solid #f8f7f7;
+    
+    }
+
+    tbody *[rowspan],
+    tbody *[colspan] {
+         background-color:rgb(220, 220, 255);
+    }
+
+    hr{
+        width: 100%;
+    }
+
+    .page5 form {
+      display:inline-flex ;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    
+    .page5 select{
+        width: 380px;
+        height: 45px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .deets input {
+        border-radius: 10px;
+        width: 380px;
+        height: 45px;
+        border: 0.5px solid;
+
+    }
+
+    #mesg{
+        height: 100px;
+        width: 400px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        border: 0.5px solid;
+        margin-left: 2rem;
+    }
+
+    #nun{
+        color: #999;
+        margin: 0;
+        margin-right: 150px;
+    }
+
+   em {
+        color: rgb(240, 21, 21);
+    }
+
+    #blue {
+        background-color: rgb(55, 55, 214);
+        border: 0.5px;
+        width: 200px;
+        border-radius: 10px;
+        color: white;
+        margin-left: 17em;
+        
+    }
+
+.foot {
+    color: white;
+    padding: 35px;
+    margin-top: 40px;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(10, 10, 134);
+    
+}
+
+    #s-line{
+        width: 99%;
+    }
+
+.f-links{
+    margin-left: auto;      /* pushes links to the far right */
+    display: flex;
+    gap: 1rem;
+
+
+}
+
+.foot a{
+    text-decoration: none;
+    color: rgb(250, 239, 239);  
+}
+
+}
+
+
+margin-left: 6rem;

@@ -180,8 +180,7 @@ a{
     
 .page0{
     position: relative;
-    height: 50vh;
-
+    height: 23vh;
 }
 
 .page1{ 
@@ -409,6 +408,9 @@ button{
         position: static;
     }
 }
+
+
+
 
 
 

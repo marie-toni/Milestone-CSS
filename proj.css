@@ -225,6 +225,15 @@ a{
      left: 30px;
 }
 
+#but1:hover{
+    background-color: rgb(11, 186, 255);
+}
+
+button:hover{
+    background-color: skyblue;
+}
+
+
 .page1 h1 {
     margin:2% ;
     font-weight: 800;
@@ -393,8 +402,12 @@ button{
 .f-links{     
     display: flex;
     gap: 1rem;
+}
 
-
+.f-links a:hover {
+    color: skyblue;
+    
+}
 
 }
 
